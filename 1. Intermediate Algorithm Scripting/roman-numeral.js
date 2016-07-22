@@ -1,31 +1,14 @@
 // https://www.freecodecamp.com/challenges/roman-numeral-converter
-function romanNumeral(numeral, value) {
-    this.numeral = numeral;
-    this.value = value;
-}
 
 var romanNumerals = [
-    new romanNumeral("M", 1000), new romanNumeral("CM", 900),
-    new romanNumeral("D", 500), new romanNumeral("CD", 400),
-    new romanNumeral("C", 100), new romanNumeral("XC", 90),
-    new romanNumeral("L", 50), new romanNumeral("XL", 40),
-    new romanNumeral("X", 10), new romanNumeral("IX", 9),
-    new romanNumeral("V", 5), new romanNumeral("IV", 4),
-    new romanNumeral("I", 1)
+    {numeral:"M", value: 1000}, {numeral:"CM", value: 900},
+    {numeral:"D", value: 500}, {numeral:"CD", value: 400},
+    {numeral:"C", value: 100}, {numeral:"XC", value: 90},
+    {numeral:"L", value: 50}, {numeral:"XL", value: 40},
+    {numeral:"X", value: 10}, {numeral:"IX", value: 9},
+    {numeral:"V", value: 5}, {numeral:"IV", value: 4},
+    {numeral:"I", value: 1}
 ];
-
-// function arabicToRoman(arabic) {
-//     var result = "";
-
-//     romanNumerals.forEach(function(roman) {
-//         while (arabic >= roman.value && arabic !== 0) {
-//             result += roman.numeral;
-//             arabic -= roman.value;
-//         }
-//     });
-
-//     return result;
-// }
 
 function convertToRoman(num) {
     var result = "";
