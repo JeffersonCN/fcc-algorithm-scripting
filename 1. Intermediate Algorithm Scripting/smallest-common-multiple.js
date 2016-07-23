@@ -24,20 +24,6 @@ function getSequencialNumbers(start, end) {
     return numbers;
 }
 
-function mapFunction(val) {
-            if (val === 1) {
-                count++;
-            }
-
-            if (val % divisor === 0) {
-                return val / divisor;
-            } else {
-                notDivisible++;
-            }
-
-            return val;
-        }
-
 function getMMC(numbers) {
     var found = false,
         count,
@@ -54,7 +40,19 @@ function getMMC(numbers) {
 
         count = 0;
         notDivisible = 0;
-        numbers = numbers.map(mapFunction);
+        numbers = numbers.map(function(val) {
+            if (val === 1) {
+                count++;
+            }
+
+            if (val % divisor === 0) {
+                return val / divisor;
+            } else {
+                notDivisible++;
+            }
+
+            return val;
+        });
 
         if (count === numbers.length) {
             found = true;
