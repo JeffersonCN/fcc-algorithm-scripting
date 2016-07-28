@@ -74,13 +74,6 @@ function makeFriendlyDates(arr) {
     friendlyDates.push(date1);
     friendlyDates.push(date2);
 
-    // years < 1 ---> não mostra o ano na data final
-
-    // se (ano inicial = ano atual) e (years < 1) ---> não mostra o ano na data inicial
-
-    // se o mês inicial = mês final ---> não mostra ano e mês na data final
-
-    console.log(friendlyDates);
     return friendlyDates;
 }
 
