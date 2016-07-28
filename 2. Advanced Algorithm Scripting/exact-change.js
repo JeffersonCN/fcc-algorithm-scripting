@@ -21,16 +21,11 @@ function getTotalFunds(cid) {
 }
 
 function checkCashRegister(price, cash, cid) {
-    console.log('--------- FUNÇÃO INICIADA ---------');
-    console.log('\tPREÇO: ' + price);
-    console.log('\tDINHEIRO: ' + cash);
     var change = [],
         changeVal = cash - price,
         totalFunds = getTotalFunds(cid),
         len = cid.length,
         pos = len - 1;
-    console.log('\tTOTAL TROCO: ' + changeVal);
-    console.log('\tEM CAIXA: ' + totalFunds);
 
 
     if (totalFunds < changeVal) {
@@ -41,12 +36,10 @@ function checkCashRegister(price, cash, cid) {
 
 
     for (var i = pos; i >= 0; i--) {
-        console.log('\t////// INICIO MOEDA ///////');
         var coin = cid[i][0],
             fund = cid[i][1],
             val = coinMap[coin],
             coins = 0;
-        console.log('\t\tMOEDA: ' + coin + " VALOR: " + val);
 
         while (changeVal - val >= 0 && fund > 0) {
             coins++;
@@ -55,8 +48,6 @@ function checkCashRegister(price, cash, cid) {
             changeVal = changeVal.toFixed(2);
         }
 
-        console.log('\t\tQUANTIDADE: ' + coins);
-        console.log('\t\tTROCO RESTANTE: ' + changeVal);
 
         if (coins > 0) {
             change.push([coin, coins * val]);
@@ -65,14 +56,12 @@ function checkCashRegister(price, cash, cid) {
         if (changeVal === 0) {
             break;
         }
-        console.log('\t////// FIM MOEDA ///////');
     }
 
     if (changeVal > 0) {
         return "Insufficient Funds";
     }
 
-    console.log('\tTROCO EM MOEDAS: ' + change);
     // Here is your change, ma'am.
     return change;
 }
